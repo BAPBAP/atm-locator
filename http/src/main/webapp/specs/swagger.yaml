@@ -15,7 +15,7 @@ paths:
     post:
       responses:
         200:
-          description: Echo POST
+          description: Sign in POST request
       parameters:
         - name: username
           in: formData

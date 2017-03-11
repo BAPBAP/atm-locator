@@ -28,44 +28,13 @@ Servlet 3.0
 JQuery 1.12.4
 Maven 3.0
 
+## Use cases
 
+| Use case                                     | REST API                              | Expected result                                                                                                                                                                                | Description                                                                                                                                                                      |
+|----------------------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. Get all ATM location in raw format        | /atm/raw                              | [{"address": {"street": "Heerenweg","housenumber": "199","postalcode": "1851 KP","city": "HEILOO","geoLocation": {"lat": "52.60022","lng": "4.703054"}},"distance": 0,"type": "ING"}]          | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and response the result in the same format as it was obtained                                          |
+| 2. Search ATM by city                        | /atm/raw?city=Rijswijk                | [{"address": {"street": "Kerklaan","housenumber": "74","postalcode": "2282 CL","city": "RIJSWIJK","geoLocation": {"lat": "52.054291","lng": "4.33541"}},"distance": 0,"type": "ALBERT_HEIJN"}, | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and the response will be filtered by city and send to requester in the same format as it was obtained. |
+| 3. Get all ATM location in simplified format | /atm-locator/atm/search               | {"data": [["Heerenweg","199","1851 KP","HEILOO"],["Irislaan","83","2343 CH","OEGSTGEEST"], ...                                                                                                 | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and response the result in the simplified format                                                       |
+| 4. Search ATM by city                        | /atm-locator/atm/search?city=Rijswijk | {"data": [["Kerklaan","74","2282 CL","RIJSWIJK"],["Bogaardplein","22","2284 DM","RIJSWIJK"],                                                                                                   | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and the response will be filtered by city and send to requester in the simplified format .             |
 
-
-#### Command Line Using Gradle
-
-The easiest way to run the **server** is to use the [Gradle Jetty Plugin](http://www.gradle.org/docs/current/userguide/jetty_plugin.html).
- Simply execute:
-
-    $ gradlew :http:jettyRun
-
-This command starts a Jetty servlet container running on port 8080 serving the application. 
-Alternatively you can also package the war-file and deploy it manually to a servlet container of your choosing. For that to happen execute:
-
-    $ gradlew :http:build
-
-The resulting war-file will be located in the **target** folder.
-
-#### Using an IDE such as SpringSource Tool Suite™ (STS)
-
-If you are using [STS](http://www.springsource.com/developer/sts) and the project is imported as an Eclipse project into your workspace, you can just execute **Run on Server**. This will start the **server** application. 
-
-### Client
-
-#### Command Line Using Gradle
-
-In order to run the **client** using Gradle, execute:
-
-    $ gradlew :http:run
-
-This will package the application and run it using the [Gradle Application Plugin](http://www.gradle.org/docs/current/userguide/application_plugin.html)
-
-#### Using an IDE such as SpringSource Tool Suite™ (STS)
-
-In STS (Eclipse), go to package **org.springframework.integration.samples.http**, right-click **HttpClientDemo** and select **Run as** --> **Java Application**. This will run the **client** application.
-
-### Output
-  
-The gateway (**client**) initiates a simple request posting "Hello" to the **server** and the **server** responds by appending **from the other side** to the message payload and returns. You should see the following output from the server:
-   
-    ++++++++++++ Replied with: Hello from the other side ++++++++++++
 

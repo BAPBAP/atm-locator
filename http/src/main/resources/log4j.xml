@@ -13,6 +13,9 @@
 	<logger name="org">
 		<level value="info" />
 	</logger>
+	<logger name="com">
+		<level value="info" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class FollowUpController {
+public class FollowUpController extends AbstractUserController {
 
 	@RequestMapping(value = "/denied", method = RequestMethod.GET)
 	public String accessDeniedPage(ModelMap model) {
@@ -19,22 +19,5 @@ public class FollowUpController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
 		return "index";
-	}
-
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String test() {
-		return "test";
-	}
-
-	private String getPrincipal() {
-		String userName = null;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-		if (principal instanceof UserDetails) {
-			userName = ((UserDetails) principal).getUsername();
-		} else {
-			userName = principal.toString();
-		}
-		return userName;
 	}
 }

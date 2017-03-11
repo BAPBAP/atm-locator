@@ -54,6 +54,17 @@ Accounts from group USER has no rights to perform any requests.
 If the application was deployed successfully, give a try and open http://localhost:8080/atm-locator/ 
 On login page enter your user and password: (admin, admin)
 
+## Swagger
+
+Where to find specification
+src/main/webapp/specs
+http://localhost:8080/atm-locator/specs/swagger.json
+
+## Swagger UI
+http://localhost:8080/atm-locator/swagger-ui/
+
+
+
 
    
 

@@ -12,13 +12,6 @@
     "basePath": "/atm-locator",
     "paths": {
         "/login": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "Login page"
-                    }
-                }
-            },
             "post": {
                 "responses": {
                     "200": {
@@ -36,6 +29,12 @@
                         "name": "password",
                         "in": "formData",
                         "description": "Password",
+                        "type": "string"
+                    },
+                    {
+                        "name": "_csrf",
+                        "in": "formData",
+                        "description": "Token",
                         "type": "string"
                     }
                 ]

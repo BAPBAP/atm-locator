@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.backbase.assignment.solution.config.AbstractUserController;
 import com.backbase.assignment.solution.service.AtmRestClient;
 import com.backbase.assignment.solution.service.ProcessorFactory;
-import com.backbase.assignment.solution.util.JsonRawResponseProcessor;
 import com.backbase.assignment.solution.util.Processor;
 
 @Controller

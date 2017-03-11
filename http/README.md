@@ -34,7 +34,27 @@ Maven 3.0
 |----------------------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1. Get all ATM location in raw format        | /atm/raw                              | [{"address": {"street": "Heerenweg","housenumber": "199","postalcode": "1851 KP","city": "HEILOO","geoLocation": {"lat": "52.60022","lng": "4.703054"}},"distance": 0,"type": "ING"}]          | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and response the result in the same format as it was obtained                                          |
 | 2. Search ATM by city                        | /atm/raw?city=Rijswijk                | [{"address": {"street": "Kerklaan","housenumber": "74","postalcode": "2282 CL","city": "RIJSWIJK","geoLocation": {"lat": "52.054291","lng": "4.33541"}},"distance": 0,"type": "ALBERT_HEIJN"}, | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and the response will be filtered by city and send to requester in the same format as it was obtained. |
-| 3. Get all ATM location in simplified format | /atm-locator/atm/search               | {"data": [["Heerenweg","199","1851 KP","HEILOO"],["Irislaan","83","2343 CH","OEGSTGEEST"], ...                                                                                                 | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and response the result in the simplified format                                                       |
-| 4. Search ATM by city                        | /atm-locator/atm/search?city=Rijswijk | {"data": [["Kerklaan","74","2282 CL","RIJSWIJK"],["Bogaardplein","22","2284 DM","RIJSWIJK"],                                                                                                   | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and the response will be filtered by city and send to requester in the simplified format .             |
+| 3. Get all ATM location in simplified format | /atm/search               | {"data": [["Heerenweg","199","1851 KP","HEILOO"],["Irislaan","83","2343 CH","OEGSTGEEST"], ...                                                                                                 | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and response the result in the simplified format                                                       |
+| 4. Search ATM by city                        | /atm/search?city=Rijswijk | {"data": [["Kerklaan","74","2282 CL","RIJSWIJK"],["Bogaardplein","22","2284 DM","RIJSWIJK"],                                                                                                   | The REST API dispatches a request to https://www.ing.nl/api/locator/atms/ and the response will be filtered by city and send to requester in the simplified format .             |
+
+## Secutity 
+There are two groups of users: ADMIN and USER
+
+ADMIN:
+   user:     admin
+   password: admin
+   
+USER: 
+   user:     petra
+   password: petra
+   
+Accounts from group USER has no rights to perform any requests.
+
+### Usage
+If the application was deployed successfully, give a try and open http://localhost:8080/atm-locator/ 
+On login page enter your user and password: (admin, admin)
+
+
+   
 
 

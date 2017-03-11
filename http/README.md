@@ -1,14 +1,19 @@
-Http Sample
-===========
+ATM Locator - HTTP REST API for searching ING bank ATM
+=========================================
 
-This example demonstrates simple request/reply communication when using a pair of **HTTP Inbound/Outbound Gateways**.
+ATM Locator is an internet portal that acts as an interface to actual locations of ATM belonging to ING bank.
+The ATM Loactor exposes: 
+* REST API interface for accessing locations of ATM
+* Simplified interface for searching and observing ATM near specified location
 
-The sample consists of two parts:
 
-* Client - Basic command-line application
-* Server - Web application (War-file)
+## How to build and deploy application
 
-## Running the sample
+The easiest way to build and run the **server** is to use the maven:
+
+    $ mvn install 
+    
+The command should build war **atm-locator.war**    
 
 ### Server
 

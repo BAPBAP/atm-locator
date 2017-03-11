@@ -15,7 +15,21 @@ The easiest way to build and run the **server** is to use the maven:
     
 The command should build war **atm-locator.war**    
 
-### Server
+### Deployment 
+
+In Tomcat env. it enough if you copy and paste **war** to **webapps** folder in Tomcat. 
+When you start Tomcat, the **war** will be automatically deploy with context root   
+
+### Technology stack
+
+Spring 4.3.8
+Spring Security 4.3.2
+Servlet 3.0
+JQuery 1.12.4
+Maven 3.0
+
+
+
 
 #### Command Line Using Gradle
 

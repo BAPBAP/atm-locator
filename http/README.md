@@ -13,7 +13,7 @@ The easiest way to build and run the **server** is to use the maven:
 
     $ mvn install 
     
-The command should build war **atm-locator.war**    
+The command should build war **atm-locator.war** in target folder  
 
 ### Deployment 
 

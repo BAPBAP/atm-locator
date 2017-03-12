@@ -22,6 +22,7 @@ When you start Tomcat, the **war** will be automatically deploy with context roo
 
 ### Technology stack
 
+JDK 1.8
 Spring 4.3.8
 Spring Security 4.3.2
 Servlet 3.0

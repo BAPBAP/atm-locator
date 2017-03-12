@@ -18,7 +18,7 @@ The command should build war **atm-locator.war**
 ### Deployment 
 
 In Tomcat env. it enough if you copy and paste **war** to **webapps** folder in Tomcat. 
-When you start Tomcat, the **war** will be automatically deploy with context root   
+When you start Tomcat, the **war** will be automatically deploy with context root atm-locator
 
 ### Technology stack
 

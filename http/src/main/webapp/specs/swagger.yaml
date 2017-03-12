@@ -2,7 +2,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: ING ATM Locator 
+  title: ATM Locator 
   description: |
     #### ATM Locator is an internet portal that acts as an interface to actual locations of ATM belonging to ING bank.
 

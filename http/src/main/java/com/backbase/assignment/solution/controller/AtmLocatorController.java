@@ -39,7 +39,7 @@ public class AtmLocatorController extends AbstractUserController {
     	
     	log.info("User="+ getPrincipal()+", searching ATM by city="+city);
     	
-    	return new ResponseEntity<String>(processorFactory.processor(Flow.valueOf(bank+"R").getProcessor()).filterByCity(atmRestClient.getAllLocations(), city), httpHeaders, HttpStatus.OK);
+    	return new ResponseEntity<String>(processorFactory.processor(Flow.valueOf(bank.toUpperCase()+"R").getProcessor()).filterByCity(atmRestClient.getAllLocations(), city), httpHeaders, HttpStatus.OK);
     }
 	
 	@RequestMapping(path = "/{bank}/search", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
@@ -51,7 +51,7 @@ public class AtmLocatorController extends AbstractUserController {
         log.info("User="+ getPrincipal()+", searching ATM by city="+city);
         
         String value = atmRestClient.getAllLocations();
-		return new ResponseEntity<String>(processorFactory.processor(Flow.valueOf(bank).getProcessor()).filterByCity(value, city), httpHeaders, HttpStatus.OK);
+		return new ResponseEntity<String>(processorFactory.processor(Flow.valueOf(bank.toUpperCase()).getProcessor()).filterByCity(value, city), httpHeaders, HttpStatus.OK);
 	}
 	
 

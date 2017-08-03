@@ -5,7 +5,8 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'echo $USER'
+            sh '''echo $USER
+docker'''
             
           },
           "PWD": {

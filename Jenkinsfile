@@ -5,7 +5,8 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'mvn -version'
+            sh '''EXPORT PATH=$PATH:/Users/vfedasenka/dev/tools/maven-mp/bin
+mvn -version'''
             
           },
           "PWD": {

@@ -7,15 +7,9 @@ pipeline {
     
   }
   stages {
-    stage('Build stage') {
+    stage('Init') {
       steps {
         sh 'mvn install'
-      }
-    }
-    stage('Report') {
-      steps {
-        junit(testResults: 'target/surefire-reports/**/*.xml', allowEmptyResults: true)
-        archiveArtifacts 'target/*.jar'
       }
     }
   }

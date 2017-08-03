@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'sudo mvn -version'
+            sh 'mvn -version'
             
           },
           "PWD": {

@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'docker'
+            sh 'sudo docker'
             
           },
           "PWD": {

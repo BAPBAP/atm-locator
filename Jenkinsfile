@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'sudo docker'
+            sh 'mvn -version'
             
           },
           "PWD": {

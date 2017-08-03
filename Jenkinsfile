@@ -3,8 +3,16 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh '''cd /
-find . | grep docker'''
+        parallel(
+          "Init": {
+            sh 'docker'
+            
+          },
+          "PWD": {
+            sh 'pwd'
+            
+          }
+        )
       }
     }
   }

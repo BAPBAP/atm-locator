@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh 'mvn -version'
+            sh 'echo $USER'
             
           },
           "PWD": {

@@ -14,5 +14,16 @@ echo M2_HOME = ${M2_HOME}
 mvn clean'''
       }
     }
+    stage('Build stage') {
+      steps {
+        sh 'mvn install'
+      }
+    }
+    stage('Report') {
+      steps {
+        junit(testResults: 'target/surefire-reports/**/*.xml', allowEmptyResults: true)
+        archiveArtifacts 'target/*.jar'
+      }
+    }
   }
 }

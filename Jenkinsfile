@@ -5,7 +5,7 @@ pipeline {
       steps {
         parallel(
           "Init": {
-            sh '''PATH=$PATH:/Users/vfedasenka/dev/tools/maven-mp/bin
+            sh '''#PATH=$PATH:/Users/vfedasenka/dev/tools/maven-mp/bin
 mvn -version'''
             
           },
